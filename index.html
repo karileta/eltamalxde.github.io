@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamalazo el Crack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"> <!-- Fuente de Google Fonts -->
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            background: url('https://i.pinimg.com/564x/d6/5b/b6/d65bb63b784648e63efaa8fd6b7f98e6.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            flex-direction: column;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+        .phrase {
+            font-family: 'Permanent Marker', cursive; /* Aplicar la fuente nueva */
+            font-size: 5em; /* Más grande */
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para hacerlo más llamativo */
+            animation: colorChange 3s infinite, move 1s infinite alternate;
+        }
+        @keyframes colorChange {
+            0% { color: red; }
+            25% { color: orange; }
+            50% { color: yellow; }
+            75% { color: green; }
+            100% { color: blue; }
+        }
+        @keyframes move {
+            from { transform: translateY(0); }
+            to { transform: translateY(-20px); }
+        }
+        .steve {
+            width: 100px; /* Tamaño más pequeño */
+            margin-top: 20px; /* Separación debajo de la frase */
+        }
+        .twitch-icons {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .twitch-icons img {
+            position: absolute;
+            width: 50px;
+            animation: fall 10s infinite;
+            animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5); /* Rebote */
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); } /* 100vh para caer hasta el fondo de la ventana */
+        }
+        .username-container {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .username, .twitch {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 3em;
+            font-weight: bold;
+            animation: drip 2s infinite, colorChange 3s infinite;
+        }
+        .twitch {
+            color: cyan; /* Color vibrante */
+        }
+        .username {
+            color: magenta; /* Color vibrante */
+            margin-left: 10px;
+        }
+        @keyframes drip {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="phrase">Ta ta ta tamalazo el crack</div>
+       <div class="tenor-gif-embed" data-postid="22164356" data-share-method="host" data-aspect-ratio="1.79775" data-width="100%"><a href="https://tenor.com/view/minecraft-buff-steve-two-zero-dance-gif-22164356">Minecraft Buff Steve GIF</a>from <a href="https://tenor.com/search/minecraft-gifs">Minecraft GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+    <div class="twitch-icons" id="twitch-icons"></div>
+    <div class="username-container">
+        <div class="twitch">Twitch:</div>
+        <div class="username">eltamalxde</div>
+    </div>
+
+    <script>
+        const twitchIconsContainer = document.getElementById('twitch-icons');
+        const twitchIconURL = 'https://w7.pngwing.com/pngs/447/905/png-transparent-twitch-logo-social-social-media-social-media-logos-icon.png';
+
+        for (let i = 0; i < 50; i++) {
+            const icon = document.createElement('img');
+            icon.src = twitchIconURL;
+            icon.style.left = `${Math.random() * 100}%`;
+            icon.style.animationDuration = `${Math.random() * 5 + 2}s`;
+            twitchIconsContainer.appendChild(icon);
+        }
+    </script>
+</body>
+</html>
